@@ -199,7 +199,7 @@ def result_check():
 						else:
 							isExit = True
 							if isNoMatchLinsExcuted == False:
-								message=f"watos_base文件中没有作处理的行 {line1}"
+								message=f"Base.strings文件中没有作处理的行 {line1}"
 								print(message)
 								allLogMessages.append(message)
 						if isExit == False:
