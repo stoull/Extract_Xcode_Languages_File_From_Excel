@@ -136,7 +136,7 @@ def writeResultFileTo(projectPath):
 	exceptionFilePath = f"./wirte_to_project_log.txt"
 	open(exceptionFilePath, 'w').close()
 
-	languageDir = findDirsDirectory(targetPath=projectPath, targetDirName="Base.lproj")
+	languageDir = findDirsDirectory(targetPath=projectPath, targetDirName="zh-Hans.lproj")
 	allLanguageFilePaths = []
 	if languageDir == False:
 		message = f"在{projectPath}目录下搜索不到Xcode项目的语言文件！"

@@ -1,0 +1,237 @@
+/* 
+  Localizable.strings
+  ShinePhone
+
+  Created by Hut on 2021/1/8.
+  
+*/
+
+"Dashboard" = "总览";
+"Plants" = "电站";
+"GroHome" = "能管";
+"Online" = "在线";
+"Offline" = "离线";
+"Fault" = "故障";
+"Today" = "今日";
+"Cancel" = "取消";
+"Unknow" = "未知";
+"OK" = "好的";
+"Runing" = "开启";
+"Stopped" = "关闭";
+"Power" = "功率";
+"Executing" = "执行中";
+"Unexecuting" = "未执行";
+"返回"="返回";
+
+"Today Energy"="今日发电";
+"发电量"="发电量";
+
+"My Devices" = "我的设备";
+"My Scenes" = "我的场景";
+"PV Linkage" = "光伏联动";
+
+"Solar Production" = "光伏产出";
+"Self-consumption" = "自发自用";
+"Export to Grid" = "馈入电网";
+"Load Consumption" = "负载消耗";
+"Import from Grid" = "电网取电";
+
+// GroHome
+// 场景
+"One-click execution" = "一键执行";
+"Conditional execution" = "条件执行";
+
+// 设备
+"thermostat" = "温控器";
+"socket" = "插座";
+"shineBoot" = "Boost";
+"shineBoostLoad" = "负载";
+"airConditioner" = "空调";
+"gh_switch" = "面板开关";
+"electricityMeter" = "电表";
+"chargePile" = "充电桩";
+"bulb" = "灯泡";
+"strip" = "灯带";
+
+"Unconnected Description" = "请在iPhone上登录您的ShinePhone账号";
+"WCSessionUnreachable Description" = "此设备与iOS设备的会话不可用！";
+"PlantListHasNoData Description" = "在您的iPhone上使用ShinePhone添加电站";
+"NoSwitchingFunction Description" = "此设备不能进行开关操作";
+"NoDevices Description" = "在您的iPhone上使用ShinePhone添加设备或场景";
+
+"TurnOnSuccess"= "开启成功";
+"TurnOnFailure"= "关闭成功";
+"OperationFailure"= "操作失败";
+
+"Set temp" = "设置温度";
+"Room temp" = "室温";
+"Thermostat Minimum Temp" = "APP能设置的最小温度为:";
+"Thermostat Maximum Temp" = "APP能设置的最大温度为:";
+
+"Water Heater" = "热水器";
+"Current Power" = "当前功率";
+"Current Temp" = "温度";
+"GHBoostLoadMode_unknow" = "未知";
+"GHBoostLoadMode_photovoltaicLinkage" = "光伏联动";
+"GHBoostLoadMode_intelligent" = "智能模式";
+"总电量" = "总电量";
+
+// 充电桩
+"ChargePile Status" = "充电桩状态";
+"Charged quantity" = "已充电量";
+"Time" = "充电时长";
+"Cost" = "消费金额";
+"Charging rates" = "充电费率";
+"Current" = "当前电流";
+"Voltage" = "当前电压";
+"Gun" = "枪";
+
+"Unavailable" = "不可用";
+"Communication exceptions" = "通信异常";
+"Preparing" = "准备中";
+"Idle" = "空闲";
+"Reserved" = "已预约";
+"Charge Complete" = "充电结束";
+"Charging" = "充电中";
+"Start Charging" = "开始充电";
+"Stop Charging" = "停止充电";
+"Suspend Charging" = "暂停充电";
+"Cancel reserve" = "取消预约";
+
+"Bulb Brightness" = "亮度";
+"Bulb Colour Temperature" = "色温";
+
+"Charge_ReserveType_Amount" = "预设金额";
+"Charge_ReserveType_Quantity" = "预设电量";
+"Charge_ReserveType_Time" = "预设时长";
+"Charge_ReserveType_None" = "无预设";
+
+// 充电模式
+"Charge_Mode_Fast" = "快充模式";
+"Charge_Mode_PVLinkage" = "光伏联动模式";
+"Charge_Mode_OffPeak" = "低费率模式";
+"Charge_Mode_Fast_short"="快充";
+"Charge_Mode_PVLinkage_short"="光伏联动";
+"Charge_Mode_OffPeak_short"="低费率";
+"Charge_BoostType_Smart" = "智能Boost";
+"Charge_BoostType_Manual" = "手动Boost";
+"Charge_BoostType_Boost" = "Boost";
+"351已解锁" = "已解锁";
+"350已锁住" = "已锁住";
+
+"Automatic" = "自动";
+
+"EVPile Refuse Charge"="桩拒绝充电";
+"Vehicle Refuse Charge"="车拒绝充电";
+
+"Time period"="时间段";
+"Pickup time"="结束时间";
+"Charge rate"="充电费率";
+
+"Frequency_once" = "单次";
+"Frequency_everyday" = "每天";
+"Frequency_monday" = "周一";
+"Frequency_tuesday" = "周二";
+"Frequency_wednesday" = "周三";
+"Frequency_thursday" = "周四";
+"Frequency_friday" = "周五";
+"Frequency_saturday" = "周六";
+"Frequency_sunday" = "周日";
+"Frequency_charging" = "预约充电中";
+"Schedule a Charge" = "预约充电";
+"Start Time" = "开始时间";
+"Auto-Stop" = "充满自动停止充电";
+
+"Hint_Charging_complete" = "充电结束，请拔下充电枪，并将充电枪归位"; // After charging, please unplug the charging gun and put it in position
+"Hint_Charging_unavailable" = "桩体状态为不可用，请切换使用其它充电桩"; // Pile unavailable, please switch to other charging piles.
+"Hint_Charging_idel" = "请连接充电枪到车辆"; // Please connect the vehicle to the charging gun.
+"Hint_Charging_CarRefuseCharge" = "车拒绝充电，请切换使用其它充电桩";
+"Hint_Charging_PileRefuseCharge" = "桩拒绝充电，，请切换使用其它充电桩";
+
+
+// Plant
+"260光伏功率" = "光伏功率";
+"49电池百分比" = "电池百分比";
+"212并网功率" = "并网功率";
+"211用电功率" = "负载功率";
+"320光伏逆变器功率" = "光伏逆变器功率";
+"322光伏逆变器发电"="光伏逆变器发电";
+"196电池电压" = "电池电压";
+"261取电功率" = "取电功率";
+"262馈电功率" = "馈入电网";
+"265充电功率" = "充电功率";
+"266放电功率" = "放电功率";
+"125负载功率" = "负载功率";
+"1147设备不在线"="设备不在线";
+"当前功率"="当前功率";
+"1121水泵"="水泵";
+"1122水箱"="水箱";
+"1124太阳能2"="太阳能";
+"41电网"="电网";
+"484电表"="电表";
+"逆变器"="逆变器";
+"Battery error" =  "电池错误";
+"Ppv generation" = "光伏产出";
+"System Production" = "系统产出";
+"Load consumption" = "负载消耗";
+"Charge" = "充电";
+"Solar storage" = "光伏储能";
+"Grid storage" = "电网储能";
+"Discharge" = "放电";
+"Battery Discharge" = "电池放电";
+"AC bypass discharge" = "AC旁路放电";
+"Day" = "日";
+"Month" = "月";
+"Year" = "年";
+
+// ActivityIndicator status
+"ActivityIndicatorStatus_Success" = "成功";
+"ActivityIndicatorStatus_Failed" = "失败";
+"ActivityIndicatorStatus_Error" = "出现错误";
+"ActivityIndicatorStatus_Executing" = "正在执行...";
+"ActivityIndicatorStatus_Opening" = "正在打开...";
+"ActivityIndicatorStatus_Loading" = "加载中...";
+
+"ErrorMessage_noEnoughDeviceInfo" = "获取不到设备信息";
+"ErrorMessage_noPlantID" = "获取不到电站ID";
+"ErrorMessage_noChargePileID" = "获取不到对应的电桩ID";
+"ErrorMessage_noChargePile" = "获取不到对应的电桩对象";
+
+"NotificationType_reportForms" = "报表";
+"NotificationType_equipmentAlarm" = "设备告警";
+"NotificationType_customerReply" = "客户回复";
+"NotificationType_importNotice" = "重要通知";
+"NotificationType_unknow" = "未知分类";
+"Notification_Accept" = "接受";
+"Notification_Decline" = "拒绝";
+
+// For the watch content in iOS side
+"Me.Watch.Watch" = "Watch";
+"Me.Watch.iWatch_User_Giude" = "iWatch使用指南";
+"Me.Watch.My_Devices" = "我的设备";
+"Me.Watch.My_Scenes" = "我的场景";
+"Me.Watch.PV_linkage" = "光伏联动";
+"Me.Watch.Added_Devices" = "已添加设备";
+"Me.Watch.Unadded_Devices" = "未添加设备";
+"Me.Watch.Added_Scene" = "已添加场景";
+"Me.Watch.Unadded_Scene" = "未添加场景";
+"Me.Watch.Added_PVLink" = "已添加联动";
+"Me.Watch.Unadded_PVLink" = "未添加联动";
+"Me.Watch.Save" = "保存";
+"Me.Watch.Edit" = "编辑";
+"Me.Watch.MoveOut" = "移出";
+"Me.Watch.Open" = "开启";
+"Me.Watch.Close" = "关闭";
+"Me.Watch.Executing" = "执行中";
+"Me.Watch.Unexecuting" = "未执行";
+
+"Watch.Api.ParameterError" = "参数错误";
+"Watch.Api.unsupportedDeviceType" = "不支持的设备类型";
+"Watch.Api.ServerResponseDataError" = "服务器返回数据错误";
+"Watch.Api.notSupported" = "接口不支持";
+"Watch.Api.deviceIsOffline" = "设备不在线";
+"Watch.Api.canNotFindDetailInfo" = "找不到详细信息";
+"Watch.Api.deviceNetworkNotSet" = "设备未配网";
+"Watch.Api.tuyaPlatformNotLogin" = "涂鸦账号未登录";
+"Watch.Api.noAccessForGuest" = "浏览用户禁止设备控制操作";
+"Watch.Api.jsonFormatError" = "json数据格式错误";
