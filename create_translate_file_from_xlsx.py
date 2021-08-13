@@ -55,13 +55,13 @@ class Language(Enum):
 			localizedName="中文繁体"
 		elif language == Language.spanish_es:
 			fileName="spanish_es"
-			localizedName="中文西班牙语"
+			localizedName="西班牙语"
 		elif language == Language.korean_ko:
 			fileName="korean_ko"
-			localizedName="中文韩语"
+			localizedName="韩语"
 		elif language == Language.french_fr:
 			fileName="french_fr"
-			localizedName="中文法语"
+			localizedName="法语"
 		else:
 			fileName="chinese_simplifed"
 			localizedName="中文简体"
