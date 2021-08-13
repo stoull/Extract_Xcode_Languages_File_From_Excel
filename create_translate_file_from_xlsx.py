@@ -202,15 +202,16 @@ def getStringsFromXlsxFile():
 
 	# 收集收有语言信息，对应的顺序为枚举Language中的顺序
 	allResutls=[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+	allUnTranslated=[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
 
 	# 收集所有对应语言下未翻译的内容
 	allNotFoundResult= [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
 	for index in range(0,17,1):
 		try:
 			lan = Language(index)
-			allNotFoundResult[index].append(f"====== 未翻译的{lan.getIdentifier()[1]}: ======")
+			allNotFoundResult[index].append(f"//====== 未翻译的{lan.getIdentifier()[1]}: ======")
 		except Exception as e:
-			allNotFoundResult[index].append(f"====== 未知语言类型{index} ======")
+			allNotFoundResult[index].append(f"//====== 未知语言类型{index} ======")
 			continue
 
 	# 所包含的语言
@@ -234,7 +235,7 @@ def getStringsFromXlsxFile():
 				if exitIndex == False:
 					for lan in requireLans:
 						resultLine = f"\"{key}\" = \"{value}\";"
-						allResutls[lan.value].append(resultLine)
+						allUnTranslated[lan.value].append(resultLine)
 						allNotFoundResult[lan.value].append(f"{resultLine} 翻译文件中未查找到翻译信息！")
 					continue
 
@@ -250,7 +251,7 @@ def getStringsFromXlsxFile():
 				else:
 					resultLine = f"\"{key}\" = \"{value}\";"
 					allNotFoundResult[lan.value].append(f"{resultLine}")
-					allResutls[lan.value].append(resultLine)
+					allUnTranslated[lan.value].append(resultLine)
 					print(f"{resultLine} 在行：{exitIndex}  列：{lan.value} 中没有翻译！")
 
 		totalNotFoundMessages=[]
@@ -265,6 +266,8 @@ def getStringsFromXlsxFile():
 
 		for index in range(1,len(allResutls),1):
 			resultList = allResutls[index]
+			unTransledList = allNotFoundResult[index]
+			resultList.extend(unTransledList)
 			lanIdentifier = requireLans[index-5].getIdentifier()[0]
 			filePath = f"./Result/{lanIdentifier}.strings"
 			if len(resultList) > 0:
@@ -274,6 +277,3 @@ def getStringsFromXlsxFile():
 if __name__ == '__main__':
 	getStringsFromXlsxFile()
 	result_check()
-
-
-
