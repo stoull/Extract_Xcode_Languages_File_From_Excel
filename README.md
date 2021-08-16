@@ -15,7 +15,8 @@
 
 观察一下具体的行为
 
-### create_translate_file_from_xlsx.py
+### 1. 脚本`create_translate_file_from_xlsx.py`的使用
+
 `create_translate_file_from_xlsx.py`脚本文件会根据当前目录下的`Base.lproj`文件中的键值对，在当当前目录下的`source_20210716_translate.xlsx`文件中查找对应的翻译内容，并生成对应语言的`.strings `文件，存放于当前目录下`Result`目录中。
 > 查找方法为
 > 用需要查找的key-value对，先匹配xlsx文件中苹果key值和key-value对中的key进行对比，如果没有再匹配 中文（校对）与key-value对中的value行,如果没有就表示未查找到。
@@ -40,6 +41,15 @@ korean_ko
 french_fr
 ```
 
+### 2. 脚本`create_translate_file_from_xlsx_combine_old.py`的使用
+使用方法同脚本`create_translate_file_from_xlsx.py`， 不过该脚本会在`create_translate_file_from_xlsx.py `的基础上，搜索当前目录下`LanguageFile_From_Old_Project`中之前项目的翻译文件。
+
+`create_translate_file_from_xlsx.py` 脚本查找翻译的顺序为在xlsx文件中的`苹果key值`后`中文（校对）`如果没有查到则表示没有查到。但有些项目的xlsx文件是后来开始写的，可能不全包含翻译文件。`create_translate_file_from_xlsx_combine_old.py`在xlsx文件中没有搜索到后，会查看`LanguageFile_From_Old_Project`下的文件，并查到对应的翻译数据。如果有翻译则写入Result的翻译文件
+
+**注意**
+>`create_translate_file_from_xlsx_combine_old.py`视`LanguageFile_From_Old_Project`下的本地化文件为都是已翻译文件。定确保来自老项目的文件都是已翻译的文件。
+
+
 ## 将多语言文件（*.strings）替换写入到工程的对应多语言文件中
 使用方法：
 
@@ -47,7 +57,8 @@ french_fr
 2. 确定你工程的目录，或者让目录尽量靠近工程中存储多语言文件的目录。不过不靠近也没有关系。
 3. 确认完全无误后运行：`python write_result_to_project.py -path your_project_path`
 
-### write_result_to_project.py
+### 1. 脚本文件 `write_result_to_project.py` 的使用
+
 使用`write_result_to_project.py`脚本文件时，传入对应工程的文件路径，
 如：`python write_result_to_project.py -path your_project_path` 或者
 `python write_result_to_project.py your_project_path `

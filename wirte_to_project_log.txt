@@ -1,0 +1,13 @@
+写入./Result/german_de.strings到/Users/hut/Documents/shinePhone_ios_new/ShineWatch Extension/SupportFile/de.lproj/Localizable.strings成功！
+zh-Hans写入错误！对应的结果文件：./Result/chinese_simplifed.strings 不存在或错误！
+en写入错误！对应的结果文件：./Result/english_en.strings 不存在或错误！
+写入./Result/chinese_hongkong.strings到/Users/hut/Documents/shinePhone_ios_new/ShineWatch Extension/SupportFile/zh-Hant-HK.lproj/Localizable.strings成功！
+写入./Result/spanish_es.strings到/Users/hut/Documents/shinePhone_ios_new/ShineWatch Extension/SupportFile/es.lproj/Localizable.strings成功！
+写入./Result/italian_it.strings到/Users/hut/Documents/shinePhone_ios_new/ShineWatch Extension/SupportFile/it.lproj/Localizable.strings成功！
+写入./Result/korean_ko.strings到/Users/hut/Documents/shinePhone_ios_new/ShineWatch Extension/SupportFile/ko.lproj/Localizable.strings成功！
+写入./Result/chinese_traditional.strings到/Users/hut/Documents/shinePhone_ios_new/ShineWatch Extension/SupportFile/zh-Hant.lproj/Localizable.strings成功！
+写入./Result/polish_pl.strings到/Users/hut/Documents/shinePhone_ios_new/ShineWatch Extension/SupportFile/pl.lproj/Localizable.strings成功！
+写入./Result/hungarian_hu.strings到/Users/hut/Documents/shinePhone_ios_new/ShineWatch Extension/SupportFile/hu-HU.lproj/Localizable.strings成功！
+写入./Result/french_fr.strings到/Users/hut/Documents/shinePhone_ios_new/ShineWatch Extension/SupportFile/fr.lproj/Localizable.strings成功！
+写入./Result/putch_nl.strings到/Users/hut/Documents/shinePhone_ios_new/ShineWatch Extension/SupportFile/nl.lproj/Localizable.strings成功！
+写入./Result/portuguese_pt.strings到/Users/hut/Documents/shinePhone_ios_new/ShineWatch Extension/SupportFile/pt-PT.lproj/Localizable.strings成功！

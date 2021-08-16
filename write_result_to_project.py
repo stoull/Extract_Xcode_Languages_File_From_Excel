@@ -185,6 +185,7 @@ def writeResultFileTo(projectPath):
 	# 存储错误信息
 	with open(exceptionFilePath, mode='wt', encoding='utf-8') as the_file:
 		the_file.write('\n'.join(errorMessages))
+	print(f"写入到项目本地化文件完成！")
 		
 
 if __name__ == '__main__':
