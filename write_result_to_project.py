@@ -7,7 +7,7 @@ class Language(Enum):
 	english_en = "en"
 	italian_it = "it"
 	polish_pl = "pl"
-	putch_nl = "nl"
+	dutch_nl = "nl"
 	german_de = "de"
 	hungarian_hu = "hu-HU"
 	portuguese_pt = "pt-PT"
@@ -34,8 +34,8 @@ class Language(Enum):
 		elif language == Language.polish_pl:
 			fileName="polish_pl"
 			localizedName="波兰语"
-		elif language == Language.putch_nl:
-			fileName="putch_nl"
+		elif language == Language.dutch_nl:
+			fileName="dutch_nl"
 			localizedName="荷兰语"
 		elif language == Language.german_de:
 			fileName="german_de"

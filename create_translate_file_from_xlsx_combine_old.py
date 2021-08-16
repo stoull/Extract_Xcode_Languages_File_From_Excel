@@ -12,7 +12,7 @@ class Language(Enum):
 	english_en = 6
 	italian_it = 7
 	polish_pl = 8
-	putch_nl = 9
+	dutch_nl = 9
 	german_de = 10
 	hungarian_hu = 11
 	portuguese_pt = 12
@@ -43,10 +43,10 @@ class Language(Enum):
 			fileName="polish_pl"
 			localizedName="波兰语"
 			assiateXCLanguage=Xcode_Language.polish_pl
-		elif language == Language.putch_nl:
-			fileName="putch_nl"
+		elif language == Language.dutch_nl:
+			fileName="dutch_nl"
 			localizedName="荷兰语"
-			assiateXCLanguage=Xcode_Language.putch_nl
+			assiateXCLanguage=Xcode_Language.dutch_nl
 		elif language == Language.german_de:
 			fileName="german_de"
 			localizedName="德语"
@@ -91,7 +91,7 @@ class Xcode_Language(Enum):
 	english_en = "en"
 	italian_it = "it"
 	polish_pl = "pl"
-	putch_nl = "nl"
+	dutch_nl = "nl"
 	german_de = "de"
 	hungarian_hu = "hu-HU"
 	portuguese_pt = "pt-PT"
@@ -118,8 +118,8 @@ class Xcode_Language(Enum):
 		elif language == Xcode_Language.polish_pl:
 			fileName="polish_pl"
 			localizedName="波兰语"
-		elif language == Xcode_Language.putch_nl:
-			fileName="putch_nl"
+		elif language == Xcode_Language.dutch_nl:
+			fileName="dutch_nl"
 			localizedName="荷兰语"
 		elif language == Xcode_Language.german_de:
 			fileName="german_de"
@@ -349,7 +349,7 @@ def getStringsFromXlsxFile():
 
 	# 所包含的语言
 	requireLans = [Language.chinese_simplifed, Language.english_en, Language.italian_it,
-				Language.polish_pl, Language.putch_nl, Language.german_de,
+				Language.polish_pl, Language.dutch_nl, Language.german_de,
 				Language.hungarian_hu, Language.portuguese_pt, Language.chinese_hongkong,
 				Language.chinese_traditional, Language.spanish_es, Language.korean_ko, Language.french_fr]
 	

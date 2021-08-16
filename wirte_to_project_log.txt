@@ -9,5 +9,5 @@ en写入错误！对应的结果文件：./Result/english_en.strings 不存在�
 写入./Result/polish_pl.strings到/Users/hut/Documents/shinePhone_ios_new/ShineWatch Extension/SupportFile/pl.lproj/Localizable.strings成功！
 写入./Result/hungarian_hu.strings到/Users/hut/Documents/shinePhone_ios_new/ShineWatch Extension/SupportFile/hu-HU.lproj/Localizable.strings成功！
 写入./Result/french_fr.strings到/Users/hut/Documents/shinePhone_ios_new/ShineWatch Extension/SupportFile/fr.lproj/Localizable.strings成功！
-写入./Result/putch_nl.strings到/Users/hut/Documents/shinePhone_ios_new/ShineWatch Extension/SupportFile/nl.lproj/Localizable.strings成功！
+写入./Result/dutch_nl.strings到/Users/hut/Documents/shinePhone_ios_new/ShineWatch Extension/SupportFile/nl.lproj/Localizable.strings成功！
 写入./Result/portuguese_pt.strings到/Users/hut/Documents/shinePhone_ios_new/ShineWatch Extension/SupportFile/pt-PT.lproj/Localizable.strings成功！

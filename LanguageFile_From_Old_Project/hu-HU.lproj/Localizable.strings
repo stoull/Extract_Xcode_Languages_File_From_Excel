@@ -164,5 +164,31 @@
 "NotificationType_unknow" = "Ismeretlen besorolás";
 "Notification_Accept" = "elfogad";
 "Notification_Decline" = "Megtagadja";
-
-
+"Me.Watch.Watch" = "Watch";
+"Me.Watch.iWatch_User_Giude" = "iWatch felhasználói kézikönyv";
+"Me.Watch.Added_Devices" = "Eszköz hozzáadva";
+"Me.Watch.Unadded_Devices" = "Nincs eszköz hozzáadva";
+"Me.Watch.Added_Scene" = "Jelenet hozzáadva";
+"Me.Watch.Unadded_Scene" = "Nincs jelenet hozzáadva";
+"Me.Watch.Added_PVLink" = "Összekapcsolás hozzáadva";
+"Me.Watch.Unadded_PVLink" = "Nincs összekapcsolás hozzáadva";
+"Me.Watch.MoveOut" = "Kiköltözik";
+"Me.Watch.Executing" = "Végrehajtáskor";
+"Me.Watch.Unexecuting" = "Nem teljesült";
+"Watch.Api.unsupportedDeviceType" = "Nem támogatott eszköztípus";
+"Watch.Api.ServerResponseDataError" = "A szerver adathibát adott vissza";
+"Watch.Api.notSupported" = "Az interfész nem támogatja";
+"Watch.Api.canNotFindDetailInfo" = "Nincsenek részletek";
+"Watch.Api.deviceNetworkNotSet" = "A készülék nincs hálózattal ellátva";
+"Watch.Api.tuyaPlatformNotLogin" = "A Tuya-fiók nincs bejelentkezve";
+"Watch.Api.noAccessForGuest" = "A böngésző felhasználók tiltják az eszközvezérlési műveleteket";
+"Watch.Api.jsonFormatError" = "json adatformátum hiba";
+"Me.Watch.My_Devices" = "Eszközlista";
+"Me.Watch.My_Scenes" = "Saját jelenetem";
+"Me.Watch.PV_linkage" = "PV kapcsolás";
+"Me.Watch.Save" = "Mentés";
+"Me.Watch.Edit" = "Szerkesztés";
+"Me.Watch.Open" = "ON";
+"Me.Watch.Close" = "OFF";
+"Watch.Api.ParameterError" = "Paraméter hiba";
+"Watch.Api.deviceIsOffline" = "Eszköz offline állapotban";
