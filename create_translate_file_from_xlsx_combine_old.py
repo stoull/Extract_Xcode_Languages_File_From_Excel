@@ -335,8 +335,8 @@ def getStringsFromXlsxFile():
 			continue
 
 	# 获取老项目中的翻译数据（可能未包含于新的xlsx翻译文件）
-	oldTransData=[{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]
-	for index in range(0,17,1):
+	oldTransData=[{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]
+	for index in range(0,18,1):
 		try:
 			lan = Language(index)
 			xcLan = lan.getIdentifier()[2]
@@ -344,7 +344,10 @@ def getStringsFromXlsxFile():
 			lanDicName=f"{lan.getIdentifier()[0]}Dic.txt"
 			if oldDataDic != False:
 				oldTransData[index]=oldDataDic
+			else:
+				oldTransData[index]={"":""}
 		except Exception as e:
+			oldTransData[index]={"":""}
 			continue
 
 	# 所包含的语言
@@ -381,29 +384,32 @@ def getStringsFromXlsxFile():
 							allUnTranslatedResult[lan.value].append(resultLine)
 							continue
 
-			rowCells = transSheet[exitIndex+1]
-			for lan in requireLans:
-				cellValue = rowCells[lan.value-1].value
-				if cellValue:
-					# 移除 xlsx 文件单元格中的换行符等
-					cellValue = cellValue.replace('\n','')
-					isExit = True
-					resultLine = f"\"{key}\" = \"{cellValue}\";"
-					allResutls[lan.value].append(resultLine)
-				else:
-					#从对应的旧翻译文件中查找
-					oldTranValue = getOldTransValue(lan, key, oldTransData)
-					if oldTranValue != False:
+			if exitIndex == False:
+				continue
+			else:
+				rowCells = transSheet[exitIndex+1]
+				for lan in requireLans:
+					cellValue = rowCells[lan.value-1].value
+					if cellValue:
+						# 移除 xlsx 文件单元格中的换行符等
+						cellValue = cellValue.replace('\n','')
 						isExit = True
-						resultLine = f"\"{key}\" = \"{oldTranValue}\";"
+						resultLine = f"\"{key}\" = \"{cellValue}\";"
 						allResutls[lan.value].append(resultLine)
-						allNotFoundResultMessag[lan.value].append(f"{resultLine} 从旧文件查找到翻译信息！")
-						continue
 					else:
-						resultLine = f"\"{key}\" = \"{value}\";"
-						allNotFoundResultMessag[lan.value].append(f"{resultLine}")
-						allUnTranslatedResult[lan.value].append(resultLine)
-						print(f"{resultLine} 在行：{exitIndex}  列：{lan.value} 中没有翻译！")
+						#从对应的旧翻译文件中查找
+						oldTranValue = getOldTransValue(lan, key, oldTransData)
+						if oldTranValue != False:
+							isExit = True
+							resultLine = f"\"{key}\" = \"{oldTranValue}\";"
+							allResutls[lan.value].append(resultLine)
+							allNotFoundResultMessag[lan.value].append(f"{resultLine} 从旧文件查找到翻译信息！")
+							continue
+						else:
+							resultLine = f"\"{key}\" = \"{value}\";"
+							allNotFoundResultMessag[lan.value].append(f"{resultLine}")
+							allUnTranslatedResult[lan.value].append(resultLine)
+							print(f"{resultLine} 在行：{exitIndex}  列：{lan.value} 中没有翻译！")
 
 		totalNotFoundMessages=[]
 
