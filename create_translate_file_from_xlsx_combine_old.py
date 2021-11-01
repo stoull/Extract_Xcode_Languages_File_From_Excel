@@ -93,7 +93,7 @@ class Xcode_Language(Enum):
 	polish_pl = "pl"
 	dutch_nl = "nl"
 	german_de = "de"
-	hungarian_hu = "hu-HU"
+	hungarian_hu = "hu"
 	portuguese_pt = "pt-PT"
 	chinese_hongkong = "zh-Hant-HK"
 	chinese_traditional = "zh-Hant"
@@ -283,7 +283,7 @@ def getStringsFromXlsxFile():
 	# 获取 苹果key值
 	appleKey_Keys=[]
 	loopIndex = 0
-	for row in transSheet.iter_rows(min_row=1, max_row=3663, min_col=4, max_col=4, values_only=True):
+	for row in transSheet.iter_rows(min_row=1, max_row=3744, min_col=4, max_col=4, values_only=True):
 		rowValue = row[0]
 		loopIndex+=1
 		if rowValue:
@@ -298,7 +298,7 @@ def getStringsFromXlsxFile():
 	# 获取 中文（校对）行的值
 	baseChinese_Simplifed=[]
 	loopIndex = 0
-	for row in transSheet.iter_rows(min_row=1, max_row=3663, min_col=5, max_col=5, values_only=True):
+	for row in transSheet.iter_rows(min_row=1, max_row=3744, min_col=5, max_col=5, values_only=True):
 		rowValue = row[0]
 		loopIndex+=1
 		if rowValue:
@@ -320,9 +320,9 @@ def getStringsFromXlsxFile():
 	baseKeyValues = getBaseInfoFromWatchLanguageStringFile()
 
 	# 收集收有语言信息，对应的顺序为枚举Language中的顺序
-	allResutls=[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+	allResutls=[{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]
 	# 收集所有对应语言下未翻译的内容
-	allUnTranslatedResult= [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+	allUnTranslatedResult= [{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]
 
 	# 收集所有对应语言下未翻译Log信息
 	allNotFoundResultMessag= [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
@@ -341,7 +341,6 @@ def getStringsFromXlsxFile():
 			lan = Language(index)
 			xcLan = lan.getIdentifier()[2]
 			oldDataDic = getOldTranslateDataKeyValueList(xcLan)
-			lanDicName=f"{lan.getIdentifier()[0]}Dic.txt"
 			if oldDataDic != False:
 				oldTransData[index]=oldDataDic
 			else:
@@ -375,14 +374,12 @@ def getStringsFromXlsxFile():
 						if oldTranValue != False:
 							isExit = True
 							resultLine = f"\"{key}\" = \"{oldTranValue}\";"
-							allResutls[lan.value].append(resultLine)
+							allResutls[lan.value][key] = oldTranValue
 							allNotFoundResultMessag[lan.value].append(f"{resultLine} 从旧工程文件查找到翻译信息！")
-							continue
 						else:
 							resultLine = f"\"{key}\" = \"{value}\";"
 							allNotFoundResultMessag[lan.value].append(f"{resultLine} 翻译文件及旧文件中未查找到翻译信息！")
-							allUnTranslatedResult[lan.value].append(resultLine)
-							continue
+							allUnTranslatedResult[lan.value][key]=value
 
 			if exitIndex == False:
 				continue
@@ -394,21 +391,20 @@ def getStringsFromXlsxFile():
 						# 移除 xlsx 文件单元格中的换行符等
 						cellValue = cellValue.replace('\n','')
 						isExit = True
-						resultLine = f"\"{key}\" = \"{cellValue}\";"
-						allResutls[lan.value].append(resultLine)
+						allResutls[lan.value][key]=cellValue
 					else:
 						#从对应的旧翻译文件中查找
 						oldTranValue = getOldTransValue(lan, key, oldTransData)
 						if oldTranValue != False:
 							isExit = True
 							resultLine = f"\"{key}\" = \"{oldTranValue}\";"
-							allResutls[lan.value].append(resultLine)
+							allResutls[lan.value][key] = oldTranValue
 							allNotFoundResultMessag[lan.value].append(f"{resultLine} 从旧文件查找到翻译信息！")
 							continue
 						else:
 							resultLine = f"\"{key}\" = \"{value}\";"
 							allNotFoundResultMessag[lan.value].append(f"{resultLine}")
-							allUnTranslatedResult[lan.value].append(resultLine)
+							allUnTranslatedResult[lan.value][key]=value
 							print(f"{resultLine} 在行：{exitIndex}  列：{lan.value} 中没有翻译！")
 
 		totalNotFoundMessages=[]
@@ -421,20 +417,26 @@ def getStringsFromXlsxFile():
 		with open(exceptionFilePath, mode='wt', encoding='utf-8') as the_file:
 			the_file.write('\n'.join(totalNotFoundMessages))
 
+		english_Translated_Dic = allResutls[Language.english_en.value]
+		english_Translated_Dic.update(allUnTranslatedResult[Language.english_en.value])
+
 		for index in range(1,len(allResutls),1):
 			resultList = allResutls[index]
 			unTransledList = allUnTranslatedResult[index]
-			resultList.append("//未翻译的内容")
-			resultList.extend(unTransledList)
+
 			lanIdentifier = requireLans[index-5].getIdentifier()[0]
 			filePath = f"./Result/{lanIdentifier}.strings"
-			if len(resultList) > 0:
-				with open(filePath, mode='wt', encoding='utf-8') as the_file:
-					 the_file.write('\n'.join(resultList))
+			with open(filePath, mode='wt', encoding='utf-8') as the_file:
+				for key,value in resultList.items():
+					resultLine = f"\"{key}\" = \"{value}\";"
+					the_file.write(f"{resultLine}\n")
+				the_file.write("//未翻译的内容\n")
+				for key,value in unTransledList.items():
+					# 将未翻译的内容替换为英文
+					english_value = english_Translated_Dic[key]
+					resultLine = f"\"{key}\" = \"{english_value}\";"
+					the_file.write(f"{resultLine}\n")
 
 if __name__ == '__main__':
 	getStringsFromXlsxFile()
 	result_check()
-
-
-
